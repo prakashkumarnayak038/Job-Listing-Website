@@ -5,7 +5,8 @@ It displays job listings with title, company, location, category, experience, an
 ## Features
 - Job cards display
 - Clean UI
-- Easy to add new jobs
+- Filter by category and experience
+- Job search bar
 
 ## Technologies Used
 - HTML
