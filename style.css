@@ -1,0 +1,385 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #eef2f3, #dfe9f3);
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+header {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 18px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    opacity: 0.7;
+}
+
+
+.search-section {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.search-section input {
+    padding: 12px 15px;
+    width: 60%;
+    max-width: 450px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.search-section button {
+    padding: 12px 20px;
+    border: none;
+    background: #667eea;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+.search-section button:hover {
+    background: #5a67d8;
+    transform: scale(1.05);
+}
+
+
+.filter-section {
+    padding: 25px 0;
+}
+
+.filters {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.filters select {
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: 0.3s;
+}
+
+.filters select:focus {
+    border-color: #667eea;
+}
+
+.reset-btn {
+    padding: 10px 18px;
+    border: none;
+    background: crimson;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.reset-btn:hover {
+    background: darkred;
+    transform: scale(1.05);
+}
+
+
+@media (max-width: 768px) {
+
+    header .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-section input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .search-section button {
+        margin-left: 0;
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+
+
+.jobs-section {
+    padding: 40px 0;
+}
+
+
+.jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+
+.job-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    position: relative;
+}
+
+.job-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.job-card h3 {
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.company {
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.location,
+.experience {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+
+.category {
+    display: inline-block;
+    background: #667eea;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin: 10px 0;
+}
+
+.category.marketing {
+    background: #e67e22;
+}
+
+.category.design {
+    background: #e84393;
+}
+
+
+.view-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    background: #667eea;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.view-btn:hover {
+    background: #5a67d8;
+}
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: popup 0.3s ease-in-out;
+}
+
+@keyframes popup {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+.close-btn {
+    float: right;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+
+.save-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    background: #27ae60;
+    color: white;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: 0.3s;
+}
+
+.save-btn:hover {
+    background: #219150;
+}
+
+.pagination {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.pagination button {
+    padding: 8px 15px;
+    border: none;
+    background: #667eea;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.pagination button:hover {
+    background: #5a67d8;
+}
+
+
+.contact-section {
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.contact-section h2 {
+    margin-bottom: 10px;
+}
+
+.contact-section p {
+    font-size: 16px;
+}
+
+
+
+.trust-section {
+    padding: 60px 0;
+    background: transparent;
+    text-align: center;
+}
+
+.trust-section h2 {
+    margin-bottom: 40px;
+    font-size: 28px;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.trust-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+}
+
+.trust-card:hover {
+    transform: translateY(-5px);
+}
+
+.trust-card h3 {
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.trust-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+.footer {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: auto;
+}

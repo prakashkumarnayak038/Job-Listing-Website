@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>JobHub</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="save.html">Saved Jobs</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="search-section">
+        <div class="container">
+            <input type="text" id="searchInput" placeholder="Search job title...">
+        </div>
+    </section>
+
+    <section class="filter-section">
+        <div class="container filters">
+
+            <select id="locationFilter">
+                <option value="">Location</option>
+                <option value="Bhubaneswar">Bhubaneswar</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Mumbai">Mumbai</option>
+            </select>
+
+            <select id="categoryFilter">
+                <option value="">Category</option>
+                <option value="IT">IT</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Design">Design</option>
+                <option value="HR">HR</option>
+                <option value="Telliocoler">Telliocoler</option>
+            </select>
+
+            <select id="experienceFilter">
+                <option value="">Experience</option>
+                <option value="Fresher">Fresher</option>
+                <option value="Mid-Level">Mid-Level</option>
+                <option value="Senior">Senior</option>
+            </select>
+
+            <button class="reset-btn" id="resetBtn">Reset Filters</button>
+
+        </div>
+    </section>
+    <section class="jobs-section">
+        <div class="container">
+            <div class="jobs-grid" id="jobsContainer">
+            </div>
+        </div>
+    </section>
+   
+    <div class="pagination">
+        <button id="prevPage">Previous</button>
+        <span id="pageInfo"></span>
+        <button id="nextPage">Next</button>
+    </div>
+
+    
+    <div class="modal" id="jobModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+
+            <h2 id="modalTitle"></h2>
+            <p><strong>Company:</strong> <span id="modalCompany"></span></p>
+            <p><strong>Location:</strong> <span id="modalLocation"></span></p>
+            <p><strong>Experience:</strong> <span id="modalExperience"></span></p>
+            <p><strong>Description:</strong></p>
+            <p id="modalDescription"></p>
+
+        </div>
+    </div>
+
+    <section class="trust-section" id="about">
+        <div class="container">
+            <h2>Why Choose JobHub?</h2>
+
+            <div class="trust-grid">
+
+                <div class="trust-card">
+                    <h3>Verified Jobs</h3>
+                    <p>All job listings are carefully reviewed to ensure authenticity.</p>
+                </div>
+
+                <div class="trust-card">
+                    <h3>Trusted Companies</h3>
+                    <p>We connect you with reliable and growing companies.</p>
+                </div>
+
+                <div class="trust-card">
+                    <h3>Secure Platform</h3>
+                    <p>Your saved jobs and information are safely stored.</p>
+                </div>
+
+                <div class="trust-card">
+                    <h3>Easy Application</h3>
+                    <p>Search, filter and apply for jobs in just a few clicks.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="contact-section" id="contact">
+        <h2>Contact</h2>
+        <p>jobhub@gmail.com</p>
+    </div>
+
+
+    <footer class="footer" >
+        <div class="container">
+            <p>© 2026 JobFinder. All Rights Reserved.</p>
+            
+        </div>
+    </footer>
+
+
+    <script src="style.js"></script>
+
+</body>
+</html>
